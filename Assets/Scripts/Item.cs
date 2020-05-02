@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    bool restore_cloak = false;
-    bool restores_health = false;
-    bool damage_health = false;
+    public bool restore_cloak = false;
+    public bool restores_health = false;
+    public bool damage_health = false;
 
-    int points = 0;
-    int value = 0;
+    public int points = 0;
+    public int value = 0;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
