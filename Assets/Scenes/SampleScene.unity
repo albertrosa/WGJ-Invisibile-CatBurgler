@@ -208,8 +208,9 @@ GameObject:
   - component: {fileID: 232847358}
   - component: {fileID: 232847357}
   - component: {fileID: 232847356}
+  - component: {fileID: 232847359}
   m_Layer: 0
-  m_Name: DarkGrey_Box64x64Measured
+  m_Name: pit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,12 +300,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232847355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.15, y: -1.687, z: -0.47607422}
+  m_LocalPosition: {x: 2, y: -1.687, z: -0.47607422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232847359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232847355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff7c8ae03adb254784e205f681f4099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant_death: 1
+  damage_health: 0
+  value: 0
 --- !u!1 &288457396
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724828750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.939, y: -1.949, z: 0}
+  m_LocalPosition: {x: -3.4, y: -1.949, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1132390941}
