@@ -11,11 +11,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-    bool hide = false;
-
     public bool cloak = false;
-
-    public float runSpeed = 0f;    
+    public float runSpeed = 250f;    
 
     // Update is called once per frame
     void Update()
