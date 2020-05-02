@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    public int health;
+    public int score;
 
-    int health;
-    int score;
+    public Text scoreText;
 
     public void takeDamage(int damage)
     {
@@ -31,6 +33,6 @@ public class PlayerStats : MonoBehaviour
     public void addScore(int points)
     {
         this.score += points;
-
+        this.scoreText.text = this.score.ToString();
     }
 }

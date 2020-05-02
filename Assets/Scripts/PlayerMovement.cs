@@ -55,5 +55,7 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             cloakTimer.stopTimer();
-        }    }
+        }
+    }
+
 }
