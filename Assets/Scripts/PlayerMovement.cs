@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     public bool cloak = false;
-    public float runSpeed = 250f;    
+    public float runSpeed = 250f;
+    public float cloakRunSpeed = .5f;
 
     // Update is called once per frame
     void Update()
@@ -43,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        horizontalMove = cloak ? horizontalMove * cloakRunSpeed  : horizontalMove;        
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
 

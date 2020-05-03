@@ -7,6 +7,7 @@ public class Dissolve : MonoBehaviour
     Material material;
 
     bool isDissolving = false;
+    bool forcedRecovery = false;
     float fade = 1f;
     public float min = .3f;
     float max = 1f;
@@ -25,7 +26,7 @@ public class Dissolve : MonoBehaviour
             isDissolving = false;
         }
 
-        if (isDissolving)
+        if (isDissolving && !forcedRecovery)
         {
             fade -= Time.deltaTime;
 
@@ -44,6 +45,19 @@ public class Dissolve : MonoBehaviour
         }
 
         material.SetFloat("_Fade", fade);
-
     }
+
+    public void overusePasue()
+    {
+        Debug.Log("Overuse!!");
+        forcedRecovery = true;
+    }
+
+    public void endForceRecovery()
+    {
+        Debug.Log("End Force Recovery");
+        forcedRecovery = false;
+    }
+
+
 }
