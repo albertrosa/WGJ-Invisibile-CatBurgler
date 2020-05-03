@@ -8,6 +8,9 @@ public class PlayerStats : MonoBehaviour
 
     public int maxHealth = 3;
     public int health;
+    public int strength = 2;
+    public int strengthBooster = 1;
+    public bool boosted = false;    
     int score;
 
     public Text scoreText;
@@ -18,6 +21,9 @@ public class PlayerStats : MonoBehaviour
         this.healthText.text = this.health.ToString();
     }
 
+    public int getPowerDamage() {
+        return (boosted) ? strength * strengthBooster : strength;
+    }
 
     public void takeDamage(int damage)
     {

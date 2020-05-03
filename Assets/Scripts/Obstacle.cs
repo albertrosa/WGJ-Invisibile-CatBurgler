@@ -11,7 +11,11 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerStats player = other.GetComponent<PlayerStats>();
+
+        if (other.CompareTag("Player"))
+        {
+
+            PlayerStats player = other.GetComponent<PlayerStats>();
             if (damage_health)
             {
                 Debug.Log("Player Takes Damage");
@@ -19,12 +23,15 @@ public class Obstacle : MonoBehaviour
                 player.takeDamage(value);
             }
 
-        if (instant_death)
-        {
-            player.kill();
-        }
-        else
-        {
+            if (instant_death)
+            {
+                player.kill();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        } else {
             Destroy(gameObject);
         }
 
