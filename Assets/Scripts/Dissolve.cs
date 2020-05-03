@@ -8,6 +8,8 @@ public class Dissolve : MonoBehaviour
 
     bool isDissolving = false;
     float fade = 1f;
+    public float min = .3f;
+    float max = 1f;
 
     void Start()
     {
@@ -27,17 +29,17 @@ public class Dissolve : MonoBehaviour
         {
             fade -= Time.deltaTime;
 
-            if (fade <= 0)
+            if (fade <= min)
             {
-                fade = 0;
+                fade = min;
             }
         } else
         {
             fade += Time.deltaTime;
 
-            if (fade >= 1)
+            if (fade >= max)
             {
-                fade = 1;
+                fade = max;
             }
         }
 
