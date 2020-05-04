@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6956239097629032761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.16, z: 0}
+  m_LocalPosition: {x: 0, y: 1.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6956239099653292010}
@@ -170,7 +170,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &6956239099653292007
 BoxCollider2D:
@@ -181,7 +181,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6956239099653292006}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4574a7e259f6a0d478b810c42bc1631c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -205,9 +205,9 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6956239099653292006}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4574a7e259f6a0d478b810c42bc1631c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566a58d57674a7748aaf9263c1902115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 200
+  m_JumpForce: 250
   m_CrouchSpeed: 0.5
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -235,7 +235,7 @@ MonoBehaviour:
     m_Bits: 55
   m_GroundCheck: {fileID: 6956239099216275119}
   m_CeilingCheck: {fileID: 6956239097629032762}
-  m_CrouchDisableCollider: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 6956239099653292013}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -257,7 +257,7 @@ MonoBehaviour:
   controller: {fileID: 6956239099653292011}
   cloakTimer: {fileID: 6956239099653292014}
   cloak: 0
-  runSpeed: 10
+  runSpeed: 15
   cloakRunSpeed: 0.5
 --- !u!114 &6956239099653292014
 MonoBehaviour:
