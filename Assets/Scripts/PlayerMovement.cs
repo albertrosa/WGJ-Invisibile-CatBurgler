@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
-    
+    public Animator animator;
     public Countdown cloakTimer;
 
     float horizontalMove = 0f;
@@ -20,9 +20,12 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("isJumping", true);
         } 
         if(Input.GetButtonDown("Crouch"))
         {
@@ -42,10 +45,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void OnLanding()
+    {
+        animator.SetBool("isJumping", false);
+    }
+
     private void FixedUpdate()
     {
 
         horizontalMove = cloak ? horizontalMove * cloakRunSpeed  : horizontalMove;        
+
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
 
