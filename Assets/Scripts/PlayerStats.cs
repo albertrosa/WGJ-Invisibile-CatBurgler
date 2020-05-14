@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
 
-    public int maxHealth = 3;
-    public int health;
-    public int strength = 2;
-    public int strengthBooster = 1;
-    public bool boosted = false;    
+    [SerializeField] int maxHealth = 3;
+    [SerializeField] int health;
+    [SerializeField] int strength = 2;
+    [SerializeField] int strengthBooster = 1;
+    [SerializeField] bool boosted = false;    
     int score;
 
     public Text scoreText;
@@ -18,7 +18,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        this.healthText.text = this.health.ToString();
+        if (healthText)
+            this.healthText.text = this.health.ToString();
     }
 
     public int getPowerDamage() {
@@ -28,13 +29,15 @@ public class PlayerStats : MonoBehaviour
     public void takeDamage(int damage)
     {
         this.health -= damage;
-        this.healthText.text = this.health.ToString();
+        if (healthText)
+            this.healthText.text = this.health.ToString();
     }
 
     public void heal(int heal)
     {
         this.health += heal;
-        this.healthText.text = this.health.ToString();
+        if (healthText)
+            this.healthText.text = this.health.ToString();
     }
 
     public int getHealth()
@@ -50,12 +53,14 @@ public class PlayerStats : MonoBehaviour
     public void addScore(int points)
     {
         this.score += points;
-        this.scoreText.text = this.score.ToString();
+        if (scoreText)
+            this.scoreText.text = this.score.ToString();
     }
 
     public void kill()
     {
         this.health = 0;
-        this.healthText.text = this.health.ToString();
+        if (healthText)
+            this.healthText.text = this.health.ToString();
     }
 }

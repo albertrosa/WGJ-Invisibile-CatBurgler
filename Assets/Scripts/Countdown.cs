@@ -11,9 +11,11 @@ public class Countdown : MonoBehaviour
 
     bool started = false;
     float remainingStart;
-    public float maxTime = 10;
+    public float maxTime = 10f;
     public float restoreSpeed = 1.0f;
     public float usageRate = 1.0f;
+
+    public FillBar fillBar;
 
     [Header("Event")]
     [Space]
@@ -35,9 +37,22 @@ public class Countdown : MonoBehaviour
     {
         remainingStart = maxTime;
         if (textBox)
-        {
             textBox.text = remainingStart.ToString();
+
+        if (fillBar)
+        {
+            fillBar.setMaxFill(remainingStart);
+            fillBar.setFill(remainingStart);
         }
+        
+    }
+
+    private void updateDisplay(float remaining)
+    {
+        if (fillBar)
+            fillBar.setFill(remaining);
+        if(textBox)
+            textBox.text = Mathf.Round(remaining).ToString();
     }
 
 
@@ -45,14 +60,13 @@ public class Countdown : MonoBehaviour
     {
         if (started && remainingStart != 0)
         {
-            Debug.Log(started.ToString());
             remainingStart = remainingStart - (Time.deltaTime * usageRate);
             if (remainingStart <= 0)
             {
                 remainingStart = 0;
                 OnEndEvent.Invoke();
             }
-            textBox.text = Mathf.Round(remainingStart).ToString();
+            updateDisplay(remainingStart);
         }
 
         if (!started && remainingStart != maxTime)
@@ -64,7 +78,7 @@ public class Countdown : MonoBehaviour
             }
 
             remainingStart = remainingStart + (Time.deltaTime * restoreSpeed);
-            textBox.text = Mathf.Round(remainingStart).ToString();
+            updateDisplay(remainingStart);
 
             if (remainingStart == maxTime)
             {
