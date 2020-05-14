@@ -48,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("isJumping", false);
     }
+    
+    public void OnDeath()
+    {
+        animator.SetTrigger("IsDead");
+    }
 
     private void FixedUpdate()
     {

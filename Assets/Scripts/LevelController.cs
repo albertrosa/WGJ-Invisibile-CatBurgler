@@ -34,9 +34,18 @@ public class LevelController : MonoBehaviour
     void GameOver()
     {
         int finalScore = stats.getScore();
+        PlayerPrefs.SetInt("LAST_SCORE", finalScore);
+        PlayerPrefs.SetInt("LAST_LEVEL", SceneManager.GetActiveScene().buildIndex);
+
         // here we want to play any special audio and be able to control the screen view
+        PlayerMovement pm = player.GetComponent<PlayerMovement>();
+        pm.OnDeath();
+
+        // Player cannot be played with anymore
+        Destroy(player);
+
         Debug.Log("GameOver");
-        //SceneManager.LoadScene("GAME_OVER");
+        SceneManager.LoadScene(1);
     }
 
     void GamePaused()

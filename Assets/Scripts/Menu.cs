@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 enum Scenes
 {
     Start = 0,
-    End = 1,
+    GAMEOVER = 1,
     Intro = 2
 }
 
@@ -22,5 +22,16 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Quiting Game");
         Application.Quit();
+    }
+
+    public void StartMenu()
+    {
+        SceneManager.LoadScene((int)Scenes.Start);
+    }
+
+    public void restartLevel()
+    {
+        int lastLevel = PlayerPrefs.GetInt("LAST_LEVEL");
+        SceneManager.LoadScene(lastLevel);
     }
 }
