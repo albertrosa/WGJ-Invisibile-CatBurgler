@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] bool boosted = false;    
     int score;
 
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     public Text healthText;
 
     private void Start()
