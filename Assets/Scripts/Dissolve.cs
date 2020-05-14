@@ -55,8 +55,11 @@ public class Dissolve : MonoBehaviour
 
     public void endForceRecovery()
     {
-        Debug.Log("End Force Recovery");
-        forcedRecovery = false;
+        if (forcedRecovery)
+        {
+            Debug.Log("End Force Recovery");
+            forcedRecovery = false;
+        }
     }
 
 

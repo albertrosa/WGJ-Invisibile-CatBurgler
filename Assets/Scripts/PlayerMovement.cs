@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
             cloak = true;
         } else if (Input.GetButtonUp("Cloak"))
         {
-            Debug.Log("Cloak Disabled");
             cloak = false;
         }
     }

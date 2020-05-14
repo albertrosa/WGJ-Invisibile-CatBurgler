@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        health = maxHealth;
         if (healthText)
             this.healthText.text = this.health.ToString();
     }
@@ -60,6 +61,7 @@ public class PlayerStats : MonoBehaviour
 
     public void kill()
     {
+        Debug.Log("PLAYER KILLED");
         this.health = 0;
         if (healthText)
             this.healthText.text = this.health.ToString();
