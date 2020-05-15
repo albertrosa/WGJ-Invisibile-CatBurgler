@@ -9,28 +9,22 @@ public class Enemy : MonoBehaviour
     public bool cloaked = false;
 
     public int hitPoints = 1;
-    public int killPoints = 2;
-    
-    private void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
             PlayerStats player = other.GetComponent<PlayerStats>();
             player.takeDamage(damageLevel);
 
             health -= player.getPowerDamage();
-            player.addScore(hitPoints);
 
             if (health <= 0)
             {
                 Destroy(gameObject);
-                player.addScore(killPoints);
             };
+
         }
     }
 
@@ -42,17 +36,14 @@ public class Enemy : MonoBehaviour
             player.takeDamage(damageLevel);
 
             health -= player.getPowerDamage();
-            player.addScore(hitPoints);
 
             if (health <= 0)
             {
                 Destroy(gameObject);
-                player.addScore(killPoints);
             };
 
         }
     }
-
 
 
 }

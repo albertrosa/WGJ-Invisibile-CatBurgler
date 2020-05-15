@@ -51,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
     
     public void OnDeath()
     {
-        animator.SetTrigger("IsDead");
+        Debug.Log("Add Death Animationn!");
+        //animator.SetTrigger("IsDead");
     }
 
     private void FixedUpdate()

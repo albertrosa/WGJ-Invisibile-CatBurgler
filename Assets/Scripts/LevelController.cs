@@ -19,6 +19,10 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (stats == null)
+            stats = player.GetComponent<PlayerStats>();
+
         if (stats.getHealth() <= 0)
         {
             Debug.Log("Player is Dead!");
